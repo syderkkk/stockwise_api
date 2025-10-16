@@ -9,6 +9,7 @@ class CategoriaSerializer(serializers.ModelSerializer):
 
 
 class ProductoSerializer(serializers.ModelSerializer):
+    # Punto adicional: Personaliza la respuesta mostrando campos completos de la categoría relacionada
     categoria_detalle = CategoriaSerializer(source='categoria', read_only=True)
     
     class Meta:
